@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Penguins</title>
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="space">
+        <div id="stars"></div>
+        <div id="moon">
+            <div class="crater crater1"></div>
+            <div class="crater crater2"></div>
+            <div class="crater crater3"></div>
+            <div class="crater crater4"></div>
+            <div class="crater crater5"></div>
+        </div>
+        <div id="spaceship">
+            <div class="ship-body"></div>
+            <div class="ship-wing ship-wing-left"></div>
+            <div class="ship-wing ship-wing-right"></div>
+            <div class="ship-window"></div>
+            <div class="ship-engine"></div>
+        </div>
+        <img id="penguin" src="image.png" alt="Space Penguin">
+    </div>
+
+    <div id="navbar">
+        <div class="nav-links">
+            <a href="#" id="homeNavBtn">Home</a>
+            <a href="#" id="aboutBtn">About Us</a>
+            <a href="#" id="developersBtn">Developers</a>
+            <a href="#" id="backToGameBtn" class="hidden">Back to Mission</a>
+        </div>
+        <div class="nav-logo">
+            <span>SPACE PENGUINS</span>
+            <img src="Logo.png" alt="Logo" class="nav-icon">
+        </div>
+    </div>
+
+    <main id="content">
+        <section id="home" class="page">
+            <h1>SPACE PENGUINS</h1>
+            <h2>JUNIOR ASTRONAUT<br>MISSION TRAINER</h2>
+            <button id="launchBtn">LAUNCH</button>
+        </section>
+
+    <section id="about" class="page hidden">
+            <h1>ABOUT US</h1>
+            <div class="card">
+                <h2>Our Mission & Why We Created It</h2>
+                <p>Space Penguins was built to transform complex space engineering and resource management into an exciting, hands-on learning adventure. We created it to spark curiosity in STEM (Science, Technology, Engineering, and Math) by putting players right in the captain's chair of a lunar outpost.</p>
+                <h2>How It Helps Young Explorers</h2>
+                <p>The game teaches critical thinking, quick decision-making, and resource balancing by forcing commanders to weigh daily trade-offs between energy, oxygen, water, and radiation shielding.</p>
+                <h2>Real-World Problem Solving</h2>
+                <p>Just like real space missions, every choice matters. Players learn how fragile life support systems are, how to adapt during unexpected crises (like meteorite impacts), and how teamwork and engineering logic keep a crew alive.</p>
+                
+                <div class="about-image-container" style="margin-top: 20px; text-align: center;">
+                    <img src="https://media.istockphoto.com/id/2228805612/photo/moon-surface-and-earth-from-spaceship-porthole.jpg?s=612x612&w=0&k=20&c=hNdi6aNeLMJY2XOjzVW07vwtRQz_Uzl5evRunlnYF-E=" alt="View of Earth and moon surface from a spaceship porthole" style="max-width: 100%; border-radius: 8px; border: 1px solid rgb(80, 110, 140);">
+                </div>
+            </div>
+        </section>
+
+        <section id="developers" class="page hidden">
+            <h1>DEVELOPERS</h1>
+            
+            <div class="card" style="max-width: 950px; width: 95%;">
+                <h2>Lunara</h2>
+                <p><strong>Role:</strong> Founder & Lead Designer</p>
+                <p>Lunara conceptualized the entire mission architecture, designed the lunar outpost UI layout, and spearheaded the creative vision for the Space Penguins ecosystem.</p>
+                <div class="designer-image-container" style="margin-top: 15px; text-align: center;">
+                    <img src="Picture.jpeg" alt="Lunara Kalybekova" style="max-width: 100%; border-radius: 8px; border: 1px solid rgb(46, 150, 245);">
+                </div>
+            </div>
+
+            <div class="card" style="max-width: 950px; width: 95%; margin-top: 20px;">
+                <h2>Emir Kalybekov</h2>
+                <p><strong>Role:</strong> Lead Core Coder & Game Logic Engineer</p>
+                <p>Emir built the interactive day-night cycle, engineered the resource management systems, and wrote the core JavaScript mechanics that keep the lunar base running.</p>
+                <div class="dev-image-container" style="margin-top: 15px; text-align: center;">
+                    <img src="laptop.png" style="max-width: 100%; border-radius: 8px; border: 1px solid rgb(46, 150, 245);">
+                </div>
+            </div>
+
+            <div class="card" style="max-width: 950px; width: 95%; margin-top: 20px;">
+                <h2>Dhir Koul</h2>
+                <p><strong>Role:</strong> Coder & JavaScript Module Engineer</p>
+                <p>Dhir engineered the modular base layouts, coded the interactive JavaScript challenges, and built the core system mechanics for the space station modules.</p>
+                <div class="dev-image-container" style="margin-top: 15px; text-align: center;">
+                    <img src="hack.jpeg" style="max-width: 100%; border-radius: 8px; border: 1px solid rgb(46, 150, 245);">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="delayed" class="hidden">
+        <div class="delayed-content">
+            <p class="delayed-text">
+                <span class="instruction-title">How to Play</span><br><br>
+                Run your lunar outpost by balancing life support, radiation shielding, power, and food production against engineering trade-offs.<br><br>
+                • 15-Minute Timer: You have 15 minutes total to complete the 10-day mission.<br>
+                • Daily Challenges: Press the base button when ready to face system trade-offs.<br>
+                • Winning & Losing: Keep all resources above 0% and survive all 10 days to win.
+            </p>
+            <button id="delaybtn" class="delayed-button">NEXT</button>
+        </div>
+    </div>
+
+    <div id="lunarSurface" class="hidden">
+        <div id="surfacePenguin">🐧</div>
+        <div id="redAlertOverlay" class="hidden"></div>
+
+        <div id="supplyPanel">
+            <div id="dayDisplay">DAY 1 / 10</div>
+            <div id="timerDisplay">⏱️ 15:00</div>
+            <div class="supply-item">
+                <div class="supply-header">
+                    <span class="supply-title">ENERGY</span>
+                    <span class="supply-value" id="energyValue">100%</span>
+                </div>
+                <div class="oval-bar-track">
+                    <div class="oval-bar-fill energy-fill" id="energyBar"></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-header">
+                    <span class="supply-title">OXYGEN</span>
+                    <span class="supply-value" id="oxygenValue">100%</span>
+                </div>
+                <div class="oval-bar-track">
+                    <div class="oval-bar-fill oxygen-fill" id="oxygenBar"></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-header">
+                    <span class="supply-title">WATER</span>
+                    <span class="supply-value" id="waterValue">100%</span>
+                </div>
+                <div class="oval-bar-track">
+                    <div class="oval-bar-fill water-fill" id="waterBar"></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-header">
+                    <span class="supply-title">RADIATION</span>
+                    <span class="supply-value" id="radiationValue">100%</span>
+                </div>
+                <div class="oval-bar-track">
+                    <div class="oval-bar-fill radiation-fill" id="radiationBar"></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-header">
+                    <span class="supply-title">LIFE SUPPORT</span>
+                    <span class="supply-value" id="lifeValue">100%</span>
+                </div>
+                <div class="oval-bar-track">
+                    <div class="oval-bar-fill life-fill" id="lifeBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="baseWall">
+            <button id="dayActionBtn" class="base-action-btn">START DAY 1</button>
+            <button id="resignBtn" class="resign-action-btn">RESIGN MISSION</button>
+        </div>
+
+        <div id="moduleC" class="base-module">
+            <div class="module-label">POWER GENERATION AND ENGINEERING MODULE (MODULE C)</div>
+            <div class="module-room">
+                <div class="battery-banks">
+                    <div class="battery-unit"><span class="bolt-icon">⚡</span></div>
+                    <div class="battery-unit"><span class="bolt-icon">⚡</span></div>
+                </div>
+                <div class="server-racks">
+                    <div class="server-rack rack-left"></div>
+                    <div class="server-rack rack-right"></div>
+                </div>
+                <div class="power-conduits">
+                    <div class="conduit conduit-yellow"></div>
+                    <div class="conduit conduit-magenta"></div>
+                    <div class="conduit conduit-cyan"></div>
+                </div>
+                <div class="shielding-connection">
+                    <div class="shielding-box"></div>
+                </div>
+                <div class="sub-label power-core-label">
+                    <div class="power-core-screen">
+                        <div class="core-graph">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    MAIN POWER CORE (MODULE C1)
+                </div>
+            </div>
+        </div>
+
+        <div class="corridor corridor-ca">
+            <div class="corridor-light"></div>
+        </div>
+
+        <div id="moduleA" class="base-module">
+            <div class="module-label">OPERATIONS AND COMMAND CENTER (MODULE A)</div>
+            <div class="module-room">
+                <div class="wire wire-top-left"></div>
+                <div class="wire wire-top-right"></div>
+                <div class="wire wire-side-left"></div>
+                <div class="wire wire-side-right"></div>
+                <div class="vent vent-left"></div>
+                <div class="vent vent-right"></div>
+                <div class="command-screen-top">
+                    <div class="screen-panel side-panel-left">
+                        <div class="screen-line"></div>
+                        <div class="screen-line active"></div>
+                        <div class="screen-line"></div>
+                    </div>
+                    <div class="screen-panel main-screen">
+                        <div class="radar-grid">
+                            <div class="radar-circle"></div>
+                            <div class="radar-sweep"></div>
+                        </div>
+                    </div>
+                    <div class="screen-panel side-panel-right">
+                        <div class="screen-graph">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-map-display">
+                    <svg class="world-map-svg" viewBox="0 0 200 100" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#07da0a" stop-opacity="0.9" />
+                                <stop offset="100%" stop-color="#00aa44" stop-opacity="0.6" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#mapGrad)" d="M 25 25 Q 35 15 50 20 Q 65 25 55 45 Q 40 50 30 40 Z" />
+                        <path fill="url(#mapGrad)" d="M 40 55 Q 50 50 60 65 Q 50 85 35 80 Q 30 65 40 55 Z" />
+                        <path fill="url(#mapGrad)" d="M 85 20 Q 105 15 115 28 Q 110 45 95 40 Q 80 35 85 20 Z" />
+                        <path fill="url(#mapGrad)" d="M 95 45 Q 115 45 120 65 Q 105 85 90 75 Q 85 55 95 45 Z" />
+                        <path fill="url(#mapGrad)" d="M 125 20 Q 165 15 175 35 Q 170 55 140 50 Q 130 35 125 20 Z" />
+                        <path fill="url(#mapGrad)" d="M 150 60 Q 175 58 180 72 Q 165 85 145 78 Z" />
+                        <circle cx="50" cy="30" r="2" fill="#ff0055" class="map-ping" />
+                        <circle cx="105" cy="35" r="2" fill="#00ff88" class="map-ping" />
+                        <circle cx="155" cy="38" r="2" fill="#ffcc00" class="map-ping" />
+                    </svg>
+                    <div class="map-grid-overlay"></div>
+                </div>
+                <div class="command-console-left">
+                    <div class="console-btn"></div>
+                    <div class="console-btn active"></div>
+                    <div class="console-btn"></div>
+                </div>
+                <div class="command-console-right">
+                    <div class="console-btn active"></div>
+                    <div class="console-btn"></div>
+                    <div class="console-btn"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="corridor corridor-ab">
+            <div class="corridor-light"></div>
+        </div>
+
+        <div id="moduleB" class="base-module">
+            <div class="module-label" id="moduleBLabel">HABITAT AND LIFE SUPPORT MODULE (MODULE B)</div>
+            <div class="module-room" id="moduleBRoom">
+                <div class="habitat-beds" id="moduleBContent">
+                    <div class="bed"></div>
+                    <div class="bed"></div>
+                </div>
+                <div class="living-table" id="moduleBTable">
+                    <div class="chair chair-left"></div>
+                    <div class="table-top"></div>
+                    <div class="chair chair-right"></div>
+                </div>
+                <div class="life-support-pipes" id="moduleBPipes">
+                    <div class="pipe pipe-pink"></div>
+                    <div class="pipe pipe-cyan"></div>
+                </div>
+                <div class="habitat-rack" id="moduleBRack"></div>
+                <div class="sub-label oxygen-label" id="moduleBSub">OXYGEN GENERATOR (MODULE B1)</div>
+            </div>
+        </div>
+
+        <div class="corridor corridor-ad-vertical">
+            <div class="corridor-light-vertical"></div>
+        </div>
+        <div class="corridor-corner-div">
+            <div class="corner-light-vertical"></div>
+            <div class="corner-light-horizontal"></div>
+        </div>
+        <div class="corridor corridor-ad-horizontal">
+            <div class="corridor-light"></div>
+        </div>
+
+        <div class="corridor corridor-cd-vertical">
+            <div class="corridor-light-vertical"></div>
+        </div>
+
+        <div id="moduleD" class="base-module">
+            <div class="module-label">FOOD PRODUCTION MODULE (MODULE D)</div>
+            <div class="module-room">
+                <div class="grow-light-bar"></div>
+                <div class="hydroponics-bed bed-top">
+                    <div class="plant-group">
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                    </div>
+                </div>
+                <div class="hydroponics-bed bed-left">
+                    <div class="plant-group-vertical">
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                    </div>
+                </div>
+                <div class="hydroponics-bed bed-right">
+                    <div class="plant-group-vertical">
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                        <div class="plant-unit"><div class="stem"></div><div class="leaf leaf-l"></div><div class="leaf leaf-r"></div></div>
+                    </div>
+                </div>
+                <div class="hydroponics-tank">
+                    <div class="tank-gauge"></div>
+                </div>
+                <div class="sub-label food-label">HYDROPONICS UNIT</div>
+            </div>
+        </div>
+
+        <div id="questionModal" class="hidden">
+            <div class="modal-box">
+                <div id="penguinSpeech" class="penguin-speech">🐧 "Commander, we have an emergency alert!"</div>
+                <div id="questionTitle" class="question-title">DAILY CHALLENGE</div>
+                <div id="questionText" class="question-text">Loading question...</div>
+                <div id="answerButtons" class="answer-buttons"></div>
+                <button id="minimizeModalBtn" class="minimize-modal-btn">Minimize Question</button>
+            </div>
+        </div>
+
+        <button id="reopenQuestionBtn" class="reopen-question-btn hidden">Go back to question</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
